@@ -12,7 +12,7 @@ Installation
 Prerequisites
 -------------
 
-* erlang R14A
+* erlang R15B
   - kernel, stdlib, sasl
 
 Mongodb support:
