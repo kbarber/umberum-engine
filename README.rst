@@ -21,8 +21,12 @@ Mongodb support:
   - http://bitbucket.org/japerk/emongo/
 * mongodb 1.2.2
 
-Compilation
------------
+Compilation - Mac OS X
+----------------------
+
+Install Erlang::
+
+  sudo port install erlang
 
 Build the source code by running::
 

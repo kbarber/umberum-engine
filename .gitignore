@@ -2,5 +2,6 @@ ebin/umberum/
 ebin/*.boot
 ebin/*.script
 ebin/*.beam
+log/*.log
 erl_crash.dump
 *~
