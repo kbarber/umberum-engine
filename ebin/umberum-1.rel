@@ -13,11 +13,11 @@
 %% --------------------------
 {release,
  {"umberum","A"},
- {erts, "5.8"},
- [{kernel, "2.14"},
-  {stdlib, "1.17"},
-  {sasl, "2.1.9.2"},
+ {erts, "5.9"},
+ [{kernel, "2.15"},
+  {stdlib, "1.18"},
+  {sasl, "2.2"},
   {umberum.logger, "1"},
   {umberum.event, "1"},
-  {emongo, "0.0.6"}]
+  {emongo, "0.2"}]
 }.

@@ -12,7 +12,7 @@
 -include_lib("include/common.hrl").
 
 setup() ->
-    .error_logger:logfile({open,?CONF(ologd_log)}).
+    .error_logger:logfile({open,?CONF(umberum_log)}).
 
 %%-------------------------------------------------------------------------
 %% @doc Log an error message
