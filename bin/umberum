@@ -4,10 +4,10 @@
 
 FQDN=`hostname -f 2>/dev/null || echo "localhost"`
 
-OLOG_BOOT=umberum-1
+UMBERUM_BOOT=umberum-1
 
 ERL_MAX_PIDS=100000000
-ERL_NAME=ologd
+ERL_NAME=umberum
 ERL_NODE=$ERL_NAME@$FQDN
 ERL_CODEPATH="ebin/ ../emongo/ebin"
 ERL_COOKIE=changeme
@@ -25,7 +25,7 @@ start() {
         -config sys \
         -setcookie $ERL_COOKIE \
         -detached \
-        -boot $OLOG_BOOT
+        -boot $UMBERUM_BOOT
 }
 
 startfg() {
@@ -37,7 +37,7 @@ startfg() {
         +W w \
         -config sys \
         -setcookie $ERL_COOKIE \
-        -boot $OLOG_BOOT
+        -boot $UMBERUM_BOOT
 }
 
 ctl () {
@@ -67,10 +67,6 @@ ctlexec () {
         -config sys \
         -setcookie $ERL_COOKIE \
         -extra $ERL_NODE $COMMAND
-}
-
-stop_olog() {
-    cd ebin
 }
 
 case "$1" in

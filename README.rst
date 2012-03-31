@@ -12,7 +12,7 @@ Installation
 Prerequisites
 -------------
 
-* erlang R14A
+* erlang R15B
   - kernel, stdlib, sasl
 
 Mongodb support:
@@ -21,8 +21,12 @@ Mongodb support:
   - http://bitbucket.org/japerk/emongo/
 * mongodb 1.2.2
 
-Compilation
------------
+Compilation - Mac OS X
+----------------------
+
+Install Erlang::
+
+  sudo port install erlang
 
 Build the source code by running::
 
@@ -37,11 +41,11 @@ Execution
 
 Run the application in the background::
 
-  ./bin/ologctl start
+  ./bin/umberum start
 
 Stop the backgrounded application with::
 
-  ./bin/ologctl stop
+  ./bin/umberum stop
 
 Administration
 --------------
@@ -49,7 +53,7 @@ Administration
 You can run the application in the foreground with an active Erlang tty session.
 This is perfect for debugging and development.::
 
-  ./bin/ologctl startfg
+  ./bin/umberum startfg
 
 From here you can do things like start the appmon process visualiser/manager::
 
@@ -60,11 +64,11 @@ To exit tty just type Ctrl-C then hit 'q'.
 Alternatively you can run the toolbar application while the logger is in the
 background::
 
-  ./bin/ologctl toolbar
+  ./bin/umberum toolbar
 
 Or you can run webtools::
 
-  ./bin/ologctl webtools
+  ./bin/umberum webtools
 
 Which can normally be accessed via HTTP on port 8888.
 
@@ -87,3 +91,13 @@ appear.
 Also tail /tmp/log to see the log file output. Again - this is all very basic 
 for now - see RELEASE.rst list for things I want to work on. Most of the obvious
 stuff is already there.
+
+Sample RELP Transmission
+------------------------
+
+RELP + RFC3169, using RFC3339 time (with 6 digit precision). To make this work,
+telnet into port 2222 and enter the 3 commands:
+
+0 open 0
+1 syslog 90 <0>1937-01-01T12:00:27.871234+01:00 scapegoat.dmz.example.org sched[0]: That's All Folks!
+2 close 0
